@@ -9,6 +9,15 @@
 #include "Arduino.h"
 #include <Servo.h>
 
+class ArduinoPanTiltServo {
+public:
+	ArduinoPanTiltServo(int panServoPin,int tiltServoPin);
+	void init(int panPos,int tiltPos);
+	void move(int panPos,int tiltPos);
+
+private:
+	Servo panServo, tiltServo;
+};
 
 
 #endif

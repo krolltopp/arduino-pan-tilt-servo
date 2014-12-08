@@ -1,15 +1,17 @@
 // Do not remove the include below
 #include "ArduinoPanTiltServo.h"
 
-
-//The setup function is called once at startup of the sketch
-void setup()
-{
-// Add your initialization code here
+ArduinoPanTiltServo::ArduinoPanTiltServo(int panServoPin, int tiltServoPin) {
+	panServo.attach(panServoPin);
+	tiltServo.attach(tiltServoPin);
 }
 
-// The loop function is called in an endless loop
-void loop()
-{
-//Add your repeated code here
+void ArduinoPanTiltServo::init(int panPos, int tiltPos) {
+	panServo.write(panPos);
+	tiltServo.write(tiltPos);
+}
+
+void ArduinoPanTiltServo::move(int panPos, int tiltPos) {
+	panServo.write(panPos);
+	tiltServo.write(tiltPos);
 }
