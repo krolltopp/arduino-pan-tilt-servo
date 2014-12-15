@@ -11,9 +11,13 @@
 
 class ArduinoPanTiltServo {
 public:
-	ArduinoPanTiltServo(int panServoPin,int tiltServoPin);
-	void init(int panPos,int tiltPos);
+	ArduinoPanTiltServo();
+	void init(int panServoPin,int tiltServoPin,int panPos,int tiltPos);
 	void move(int panPos,int tiltPos);
+	void pan(int panPos);
+	void tilt(int tiltPos);
+	int pan();
+	int tilt();
 
 private:
 	Servo panServo, tiltServo;
